@@ -1,40 +1,28 @@
 
 class Person {
   constructor(name, age) {
-    this._name = name;
-    this._age = age;
+    this.name = name;
+    this.age = age;
   }
 
-  get name() {
-    return this._name;
-  }
-
-  set name(name) {
-    this._name = name;
-  }
-
-  get age() {
-    return this._age;
-  }
-
-  set age(age) {
-    this._age = age;
+  greet() {
+    console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`);
   }
 }
 
-class Student extends Person {
-  study() {
-    console.log(`${this.name} is studying`);
+class Employee extends Person {
+  constructor(name, age, jobTitle) {
+    super(name, age);
+    this.jobTitle = jobTitle;
+  }
+
+  jobGreet() {
+    console.log(
+      `Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`
+    );
   }
 }
 
-class Teacher extends Person {
-  teach() {
-    console.log(`${this.name} is teaching`);
-  }
-}
-
-// Make classes accessible to Cypress
+// Make classes available to Cypress
 window.Person = Person;
-window.Student = Student;
-window.Teacher = Teacher;
+window.Employee = Employee;
