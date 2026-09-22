@@ -34,8 +34,7 @@ class Teacher extends Person {
   }
 }
 
-// Make classes available to Cypress
+// Make classes accessible to Cypress
 window.Person = Person;
 window.Student = Student;
 window.Teacher = Teacher;
-
